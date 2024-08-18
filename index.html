@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website của ĐHKT TP.HCM</title>
+    <style>
+      .entry-title {
+        padding-bottom: 0;
+        text-transform: initial;
+        font-size: 20px;
+        color: #000;
+        margin-bottom: 5px;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Sử dụng id = list-container để ref danh sách item -->
+    <div
+      style="
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        padding: 300px;
+        justify-content: space-between;
+      "
+      id="list-container"
+    ></div>
+
+    <script>
+      /* 
+        Giả lập dữ liệu
+      */
+      const data = [
+        {
+          image:
+            'https://bit.ueh.edu.vn/wp-content/uploads/2024/07/OPL_Poster-331x197.jpg',
+          title: 'Công nghệ phần mềm',
+          content:
+            '♥ CUỘC THI OLYMPIC TIN HỌC CẤP UEH ĐỂ TUYỂN CHỌN ĐỘI TUYỂN THAM GIA KỲ THI OLYMPIC TIN HỌC SINH VIÊN VIỆT NAM LẦN THỨ 33 NĂM 2024 ♥ Các bạn sinh viên UEH thân mến, Olympic Tin học Sinh viên...',
+        },
+        {
+          image:
+            'https://bit.ueh.edu.vn/wp-content/uploads/2024/02/ATTT-331x197.png',
+          title: 'An toàn thông tin',
+          content:
+            'Giới thiệu Sinh viên được trang bị kiến thức chuyên sâu về xây dựng, triển khai, quản trị và tiến tới có thể đưa ra chiến lược cũng như tư vấn kiến trúc các hệ thống ATTT tiên tiến. Đặc biệt,...',
+        },
+        {
+          image:
+            'https://bit.ueh.edu.vn/wp-content/uploads/2024/02/CNTT-1536x745-1-331x197.png',
+          title: 'Hệ thống thông tin kinh doanh',
+          content:
+            'Giới thiệu Sinh viên được trang bị kiến thức chuyên sâu về xây dựng, triển khai, quản lý, bảo trì và vận hành các hệ thống CNTT. Đặc biệt là khả năng phân tích vấn đề, xây dựng, lựa chọn giải...',
+        },
+      ];
+
+      /* 
+        Khởi tạo biến với id là list-container
+      */
+      const container = document.getElementById('list-container');
+      data.forEach((x) => {
+        /* 
+        Style cho item
+      */
+        const itemDiv = document.createElement('div');
+        itemDiv.style.display = 'flex';
+        itemDiv.style.flexDirection = 'column';
+        itemDiv.style.marginBottom = '20px';
+        itemDiv.style.width = '300px';
+        itemDiv.style.alignItems = 'center';
+
+        //Gắn thẻ cho item
+        itemDiv.innerHTML = `
+              <img src=${x.image} />
+              <h2 class="entry-title">${x.title}</h2>
+              <p>${x.content}</p>
+              `;
+        // đẩy item vào conteinr
+        container.appendChild(itemDiv);
+      });
+    </script>
+  </body>
+</html>
