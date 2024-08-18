@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website của ĐHKT TP.HCM</title>
+    <style>
+      /* Đặt hình nền cho trang */
+      body {
+        background-image: url('https://bit.ueh.edu.vn/wp-content/uploads/2017/06/BIT_logo.png');
+        /* Thay đổi thành đường dẫn logo của UEH */
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        overflow: hidden;
+        /* Ẩn thanh cuộn */
+      }
+
+      /* Định dạng chữ chạy */
+      .marquee {
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        animation: marquee 10s linear infinite;
+        /* Animation di chuyển chữ */
+      }
+
+      /* Định nghĩa animation cho chữ chạy */
+      @keyframes marquee {
+        from {
+          transform: translateX(100%);
+        }
+
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* Định dạng nội dung chữ */
+      .marquee span {
+        font-size: 24px;
+        color: blue;
+        font-weight: bold;
+      }
+
+      /* Định dạng video */
+      .video-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Chữ chạy từ trái qua phải -->
+    <div class="marquee">
+      <span>Chào mừng bạn đến website của trường ĐHKT TP.HCM</span>
+    </div>
+
+    <!-- Video tự động chạy với đầy đủ điều khiển -->
+    <div class="video-container">
+      <video width="640" height="360" controls autoplay>
+        <source src="./uehvideo.mp4" type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ HTML video.
+      </video>
+    </div>
+  </body>
+</html>
